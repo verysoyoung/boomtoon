@@ -1,5 +1,3 @@
-//libs/styledComponets/Provider.tsx
-
 'use client'
 
 import { ThemeProvider } from 'styled-components'
