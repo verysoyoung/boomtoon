@@ -40,6 +40,8 @@ const NavWrap = styled.div`
 
 const LogoImage = styled(Image)`
   cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
 `
 
 const Wrap = styled.div`
