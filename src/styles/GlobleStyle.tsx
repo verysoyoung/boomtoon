@@ -106,6 +106,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     width:100%;
     line-height: 1;
+    background-color:#f5f5f5;
   }
   ol,
   ul {
@@ -125,5 +126,9 @@ export const GlobalStyle = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit; 
   }
 `

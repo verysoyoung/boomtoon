@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styled from 'styled-components'
-import { logoIconList } from './logoIconData'
+import { logoIconList } from './logoIconList'
 import NavButton from '../atom/NavButton'
 
 export default function Navigation() {
@@ -16,7 +16,7 @@ export default function Navigation() {
         />
         <NavButtonWrap>
           {logoIconList.map(({ imgUrl, alt }) => {
-            return <NavButton imgUrl={imgUrl} alt={alt} />
+            return <NavButton key={imgUrl} imgUrl={imgUrl} alt={alt} />
           })}
         </NavButtonWrap>
       </NavWrap>
@@ -32,6 +32,7 @@ const NavButtonWrap = styled.div`
 const NavWrap = styled.div`
   max-width: 720px;
   width: 100%;
+  height: 67px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -46,5 +47,6 @@ const LogoImage = styled(Image)`
 
 const Wrap = styled.div`
   width: 100%;
+  background-color: #ffffff;
   border-bottom: 1px solid #dddddd;
 `

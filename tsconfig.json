@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/daily/pages.js"
+    "src/app/home/pages.js"
   ],
   "exclude": ["node_modules"]
 }
