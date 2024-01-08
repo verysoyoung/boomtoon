@@ -2,11 +2,14 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 import { logoIconList } from './logoIconList'
-import NavButton from '../atom/NavButton'
+import NavButton from '../../Atom/NavButton'
+import { theme } from '@/styles/theme'
+import TopBar from '@/components/Atom/TopBar'
 
 export default function Navigation() {
   return (
     <Wrap>
+      <TopBar />
       <NavWrap>
         <LogoImage
           src="https://www.boomtoon.com/images/nav/ic-pc-nav-home.svg"
@@ -47,6 +50,9 @@ const LogoImage = styled(Image)`
 
 const Wrap = styled.div`
   width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: ${theme.layout.zIndex1};
   background-color: #ffffff;
   border-bottom: 1px solid #dddddd;
 `

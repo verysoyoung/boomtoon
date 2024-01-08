@@ -1,6 +1,6 @@
-import Slider from '@/components/Slider'
-import MainTabs from '@/components/MainTabs'
-import SubTabs from '@/components/SubTabs'
+import MainTabs from '@/components/molecules/MainTabs'
+import Slider from '@/components/molecules/Slider'
+import WeeklyContainer from '@/components/Organisms/WeeklyContainer'
 
 export default function Page({ params }: { params: { menu: string } }) {
   const { menu } = params
@@ -8,7 +8,7 @@ export default function Page({ params }: { params: { menu: string } }) {
     <div>
       <MainTabs currentMenu={menu} />
       <Slider />
-      <SubTabs />
+      <WeeklyContainer />
     </div>
   )
 }

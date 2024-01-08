@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import StyledComponentsProvider from '@/libs/styledComponents/Provider'
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/molecules/Navigation'
 import Wrapper from '@/components/Wrapper'
-import TopBar from '@/components/atom/TopBar'
+import TopBar from '@/components/Atom/TopBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +21,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StyledComponentsProvider>
-          <TopBar />
           <Navigation />
           <Wrapper>{children}</Wrapper>
         </StyledComponentsProvider>

@@ -24,7 +24,7 @@ export default function MainTabs({ currentMenu }: { currentMenu?: string }) {
 const Button = styled.li<{ $isActive: boolean }>`
   cursor: pointer;
   width: 25%;
-  color: ${theme.colors.gray};
+  color: ${theme.colors.lightGray};
   line-height: 48px;
   font-size: 18px;
   text-overflow: ellipsis;
@@ -43,6 +43,9 @@ const Button = styled.li<{ $isActive: boolean }>`
   }
 `
 const Wrap = styled.ul`
+  position: sticky;
+  top: 98px;
+  z-index: ${theme.layout.zIndex3};
   width: 100%;
   background-color: #ffffff;
   display: flex;

@@ -1,4 +1,4 @@
-import MainTabs from '@/components/MainTabs'
+import MainTabs from '@/components/molecules/MainTabs'
 
 export default function Home() {
   return (

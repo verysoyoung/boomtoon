@@ -9,7 +9,15 @@ interface NavButtonProps {
 export default function NavButton({ imgUrl, alt }: NavButtonProps) {
   return (
     <Wrap>
-      <Image src={imgUrl} alt={alt} width={22} height={22} />
+      <Image
+        src={imgUrl}
+        alt={alt}
+        width={22}
+        height={22}
+        onError={() => {
+          return '/images/noImage.png'
+        }}
+      />
     </Wrap>
   )
 }
