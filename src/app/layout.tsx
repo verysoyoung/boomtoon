@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import StyledComponentsProvider from '@/libs/styledComponents/Provider'
-import Navigation from '@/components/molecules/Navigation'
+import Navigation from '@/components/Molecules/Navigation'
 import Wrapper from '@/components/Wrapper'
 import TopBar from '@/components/Atom/TopBar'
 

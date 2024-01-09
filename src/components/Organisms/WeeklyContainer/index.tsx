@@ -1,14 +1,14 @@
 'use client'
 import { useState } from 'react'
 import styled from 'styled-components'
-import SubTabs from '../../molecules/SubTabs'
-import ImageList from '@/components/molecules/ImageList'
+import SubTabs from '../../Molecules/SubTabs'
+import ImageList from '@/components/Molecules/ImageList'
 import { theme } from '@/styles/theme'
 
 export default function WeeklyContainer() {
   const [tabValue, setTabValue] = useState<string>('mon')
   const data = require(`/public/data/mock/daily/${tabValue}.json`)
-  const handleChangeTab = (value) => {
+  const handleChangeTab = (value: string) => {
     setTabValue(value)
   }
   return (

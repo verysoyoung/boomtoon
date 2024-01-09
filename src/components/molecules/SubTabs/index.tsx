@@ -3,7 +3,11 @@ import styled from 'styled-components'
 import { subTabList } from './subTabList'
 import { theme } from '@/styles/theme'
 
-export default function SubTabs({ onChangeTab }) {
+export default function SubTabs({
+  onChangeTab,
+}: {
+  onChangeTab: (value: string) => void
+}) {
   return (
     <Wrap>
       {subTabList.map(({ title, value }) => {

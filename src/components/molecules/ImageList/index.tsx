@@ -2,11 +2,14 @@ import { theme } from '@/styles/theme'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-export default function ImageList({ data }) {
-  const squareThumbnail = (thumbnails) => {
+interface ImageListProps {
+  data: DailyResponse[]
+}
+
+export default function ImageList({ data }: ImageListProps) {
+  const squareThumbnail = (thumbnails: ThumbnailObj[]) => {
     return thumbnails.filter(({ type }) => type === 'SQUARE')[0].imagePath
   }
-  console.log(data, '--data')
   return (
     <Wrap>
       {data.map(({ id, thumbnails, title, viewCount, creators }) => {
