@@ -13,7 +13,7 @@ export default function WeeklyContainer() {
   }
   return (
     <Wrap>
-      <SubTabs onChangeTab={handleChangeTab} />
+      <SubTabs onChangeTab={handleChangeTab} tabValue={tabValue} />
       <ImageList data={data.content} />
     </Wrap>
   )

@@ -15,16 +15,24 @@ export default function ImageList({ data }: ImageListProps) {
       {data.map(({ id, thumbnails, title, viewCount, creators }) => {
         return (
           <Item key={id}>
-            <Image
-              src={squareThumbnail(thumbnails)}
-              width={165}
-              height={165}
-              alt={`${title} thumbnail image`}
-            />
-            <Title>{title}</Title>
-            <TextBottom>
-              {viewCount} | <Creator>{creators}</Creator>
-            </TextBottom>
+            <ImageWrap>
+              <Img
+                src={squareThumbnail(thumbnails)}
+                alt={`${title} thumbnail image`}
+              />
+            </ImageWrap>
+            <TextWrap>
+              <Title>{title}</Title>
+              <TextBottom>
+                <ViewLogoTextWrap>
+                  <img
+                    src="https://www.boomtoon.com/images/common/ic-comm-view.svg"
+                    alt="view logo image"
+                  />
+                </ViewLogoTextWrap>
+                {viewCount} | <Creator>{creators}</Creator>
+              </TextBottom>
+            </TextWrap>
           </Item>
         )
       })}
@@ -34,21 +42,59 @@ export default function ImageList({ data }: ImageListProps) {
 
 const Creator = styled.span``
 
-const TextBottom = styled.p`
-  color: ${theme.colors.lightGray};
+const ViewLogoTextWrap = styled.div`
+  display: inline-block;
+  position: relative;
+  height: 16px;
+  width: 16px;
+  margin-right: 3px;
+  > img {
+    position: absolute;
+    width: 100%;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `
 
-const Title = styled.p`
+const TextBottom = styled.div`
+  display: block;
   text-overflow: ellipsis;
-  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
+  color: ${theme.colors.lightGray};
+  font-size: 12px;
+  line-height: 14px;
+`
+
+const Title = styled.div`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 400;
   color: ${theme.colors.darkGray};
   font-size: 16px;
-  line-height: 1.5;
+`
+
+const TextWrap = styled.div`
+  margin-top: 10px;
+`
+
+const Img = styled.img`
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`
+
+const ImageWrap = styled.div`
+  position: relative;
+  width: 100%;
 `
 
 const Item = styled.li`
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   width: calc(25% - 8px);
@@ -58,6 +104,6 @@ const Item = styled.li`
 const Wrap = styled.ul`
   z-index: ${theme.layout.zIndex2};
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   padding: 0 16px;
 `

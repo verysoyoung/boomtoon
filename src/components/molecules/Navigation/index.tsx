@@ -5,18 +5,21 @@ import { logoIconList } from './logoIconList'
 import NavButton from '../../Atom/NavButton'
 import { theme } from '@/styles/theme'
 import TopBar from '@/components/Atom/TopBar'
+import Link from 'next/link'
 
 export default function Navigation() {
   return (
     <Wrap>
       <TopBar />
       <NavWrap>
-        <LogoImage
-          src="https://www.boomtoon.com/images/nav/ic-pc-nav-home.svg"
-          alt="Boomtoon Logo Image"
-          width="22"
-          height="32"
-        />
+        <Link href={'/'}>
+          <LogoImage
+            src="https://www.boomtoon.com/images/nav/ic-pc-nav-home.svg"
+            alt="Boomtoon Logo Image"
+            width="22"
+            height="32"
+          />
+        </Link>
         <NavButtonWrap>
           {logoIconList.map(({ imgUrl, alt }) => {
             return <NavButton key={imgUrl} imgUrl={imgUrl} alt={alt} />

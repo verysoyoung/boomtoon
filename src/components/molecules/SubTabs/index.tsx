@@ -1,18 +1,23 @@
 'use client'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { subTabList } from './subTabList'
 import { theme } from '@/styles/theme'
 
-export default function SubTabs({
-  onChangeTab,
-}: {
+interface SubTabsProps {
   onChangeTab: (value: string) => void
-}) {
+  tabValue: string
+}
+
+export default function SubTabs({ onChangeTab, tabValue }: SubTabsProps) {
   return (
     <Wrap>
       {subTabList.map(({ title, value }) => {
         return (
-          <Button key={title} onClick={() => onChangeTab(value)}>
+          <Button
+            key={title}
+            onClick={() => onChangeTab(value)}
+            $isActive={value === tabValue}
+          >
             {title}
           </Button>
         )
@@ -21,15 +26,22 @@ export default function SubTabs({
   )
 }
 
-const Button = styled.li`
+const Button = styled.li<{ $isActive: boolean }>`
   cursor: pointer;
   width: 100%;
-  padding: 12px 0;
+  padding: 10px 0;
   font-size: 12px;
-  line-height: 32px;
   color: ${theme.colors.darkGray};
   text-align: center;
   font-weight: 400;
+  ${(props) =>
+    props.$isActive &&
+    css`
+      color: #ffffff;
+      background-color: ${theme.colors.main};
+      font-weight: 700;
+      border-radius: 16px;
+    `}
 `
 
 const Wrap = styled.ul`
@@ -39,4 +51,5 @@ const Wrap = styled.ul`
   position: sticky;
   top: 98px;
   z-index: ${theme.layout.zIndex1};
+  padding: 12px 0;
 `
