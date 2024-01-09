@@ -1,5 +1,6 @@
 import { theme } from '@/styles/theme'
-import Image from 'next/image'
+import { compact } from '@/utils/compactNumber'
+import { squareThumbnail } from '@/utils/squareThumbnail'
 import styled from 'styled-components'
 
 interface ImageListProps {
@@ -7,9 +8,6 @@ interface ImageListProps {
 }
 
 export default function ImageList({ data }: ImageListProps) {
-  const squareThumbnail = (thumbnails: ThumbnailObj[]) => {
-    return thumbnails.filter(({ type }) => type === 'SQUARE')[0].imagePath
-  }
   return (
     <Wrap>
       {data.map(({ id, thumbnails, title, viewCount, creators }) => {
@@ -30,7 +28,7 @@ export default function ImageList({ data }: ImageListProps) {
                     alt="view logo image"
                   />
                 </ViewLogoTextWrap>
-                {viewCount} | <Creator>{creators}</Creator>
+                {compact(viewCount)} | <Creator>{creators}</Creator>
               </TextBottom>
             </TextWrap>
           </Item>
