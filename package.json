@@ -12,12 +12,15 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.6"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-slick": "^0.23.13",
     "@types/styled-components": "^5.1.34",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
