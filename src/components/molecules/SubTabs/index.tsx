@@ -44,6 +44,7 @@ const Button = styled.li<{ $isActive: boolean }>`
     `};
   @media (max-width: ${theme.size.mobile}) {
     width: 18%;
+    max-width: 65px;
     flex: 0 0 auto;
   }
 `

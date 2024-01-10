@@ -3,11 +3,9 @@
 import styled, { css } from 'styled-components'
 import { menuList } from './menuList'
 import { theme } from '@/styles/theme'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 export default function MainTabs({ currentMenu }: { currentMenu?: string }) {
-  const pathname = usePathname()
   return (
     <Wrap>
       {menuList.map(({ title, value }) => {

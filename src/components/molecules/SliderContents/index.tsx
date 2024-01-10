@@ -5,15 +5,16 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider, { Settings } from 'react-slick'
 import { SliderArrow } from '@/components/Atom/SliderArrow'
 import { useState } from 'react'
-import { imageList } from './imageList'
+import { dailyImageList, mainImageList } from './imageList'
 
-export default function SliderContents() {
+export default function SliderContents({ daily }: { daily?: boolean }) {
+  const imageList = daily ? dailyImageList : mainImageList
   const [slideState, setSlideState] = useState({
     current: 0,
     next: 0,
   })
   const settings: Settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -27,17 +28,15 @@ export default function SliderContents() {
     prevArrow: <SliderArrow.PrevArrow next={slideState.next + 1} />,
   }
   return (
-    <Wrap>
-      <Slider {...settings}>
-        {imageList.map(({ imgUrl, alt }) => {
-          return (
-            <ImgCard key={imgUrl}>
-              <img src={imgUrl} alt={alt} />
-            </ImgCard>
-          )
-        })}
-      </Slider>
-    </Wrap>
+    <Slider {...settings}>
+      {imageList.map(({ imgUrl, alt }) => {
+        return (
+          <ImgCard key={imgUrl}>
+            <img src={imgUrl} alt={alt} />
+          </ImgCard>
+        )
+      })}
+    </Slider>
   )
 }
 
@@ -48,5 +47,3 @@ const ImgCard = styled.div`
     height: auto;
   }
 `
-
-const Wrap = styled.div``

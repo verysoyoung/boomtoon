@@ -1,5 +1,5 @@
 import MainTabs from '@/components/Molecules/MainTabs'
-import Slider from '@/components/Molecules/Slider'
+import SliderContents from '@/components/Molecules/SliderContents'
 import WeeklyContainer from '@/components/Organisms/WeeklyContainer'
 
 export default function Page({ params }: { params: { menu: string } }) {
@@ -7,7 +7,7 @@ export default function Page({ params }: { params: { menu: string } }) {
   return (
     <div>
       <MainTabs currentMenu={menu} />
-      <Slider />
+      <SliderContents daily={true} />
       <WeeklyContainer />
     </div>
   )
