@@ -41,7 +41,11 @@ const Button = styled.li<{ $isActive: boolean }>`
       background-color: ${theme.colors.main};
       font-weight: 700;
       border-radius: 16px;
-    `}
+    `};
+  @media (max-width: ${theme.size.mobile}) {
+    width: 18%;
+    flex: 0 0 auto;
+  }
 `
 
 const Wrap = styled.ul`
@@ -52,4 +56,9 @@ const Wrap = styled.ul`
   top: 98px;
   z-index: ${theme.layout.zIndex1};
   padding: 12px 0;
+  @media (max-width: ${theme.size.mobile}) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: start;
+  }
 `

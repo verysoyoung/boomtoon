@@ -1,3 +1,7 @@
+const size = {
+  mobile: '600px',
+}
+
 const colors = {
   main: '#fc3dab',
   darkGray: '#212121',
@@ -13,4 +17,5 @@ const layout = {
 export const theme = {
   colors,
   layout,
+  size,
 }

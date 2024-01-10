@@ -28,7 +28,7 @@ export default function ImageList({ data }: ImageListProps) {
                     alt="view logo image"
                   />
                 </ViewLogoTextWrap>
-                {compact(viewCount)} | <Creator>{creators}</Creator>
+                {compact(viewCount)} | <span>{creators}</span>
               </TextBottom>
             </TextWrap>
           </Item>
@@ -37,8 +37,6 @@ export default function ImageList({ data }: ImageListProps) {
     </Wrap>
   )
 }
-
-const Creator = styled.span``
 
 const ViewLogoTextWrap = styled.div`
   display: inline-block;
@@ -97,6 +95,9 @@ const Item = styled.li`
   flex-direction: column;
   width: calc(25% - 8px);
   margin: 0 4px 18px;
+  @media (max-width: ${theme.size.mobile}) {
+    width: calc(50% - 8px);
+  }
 `
 
 const Wrap = styled.ul`
@@ -104,4 +105,7 @@ const Wrap = styled.ul`
   display: flex;
   flex-flow: wrap;
   padding: 0 16px;
+  @media (max-width: ${theme.size.mobile}) {
+    padding: 0 8px;
+  }
 `
