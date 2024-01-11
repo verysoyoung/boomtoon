@@ -64,6 +64,12 @@ const LogoWrap = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 25%;
+  @media (max-width: ${theme.size.mobile}) {
+    width: 100%;
+    justify-content: center;
+    height: 30px;
+    padding-top: 20px;
+  }
 `
 
 const TextWrap = styled.div`
@@ -78,6 +84,11 @@ const TextWrap = styled.div`
   > div {
     cursor: pointer;
   }
+  @media (max-width: ${theme.size.mobile}) {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid ${theme.colors.brightGray};
+  }
 `
 
 const TopWrap = styled.div`
@@ -85,6 +96,10 @@ const TopWrap = styled.div`
   justify-content: space-between;
   padding: 0 15px;
   border-bottom: 1px solid ${theme.colors.brightGray};
+  @media (max-width: ${theme.size.mobile}) {
+    flex-direction: column;
+    border-bottom: 0px;
+  }
 `
 
 const Wrap = styled.div``
