@@ -53,7 +53,7 @@ const State = styled.span`
 
 const Wrap = styled.div<{ $right: number; $nextArrow?: boolean }>`
   cursor: pointer;
-  z-index: ${theme.layout.zIndex1};
+  z-index: ${theme.layout.zIndex4};
   background-color: rgba(0, 0, 0, 0.3);
   color: #ffffff;
   position: absolute;

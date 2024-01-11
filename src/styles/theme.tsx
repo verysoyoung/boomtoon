@@ -13,6 +13,7 @@ const layout = {
   zIndex1: '900',
   zIndex2: '500',
   zIndex3: '200',
+  zIndex4: '100',
 }
 
 export const theme = {
