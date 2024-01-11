@@ -6,6 +6,7 @@ const colors = {
   main: '#fc3dab',
   darkGray: '#212121',
   lightGray: '#757575',
+  brightGray: '#dddddd',
 }
 
 const layout = {

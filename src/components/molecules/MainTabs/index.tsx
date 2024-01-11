@@ -5,9 +5,14 @@ import { menuList } from './menuList'
 import { theme } from '@/styles/theme'
 import Link from 'next/link'
 
-export default function MainTabs({ currentMenu }: { currentMenu?: string }) {
+interface MainTabs {
+  currentMenu?: string
+  main?: boolean
+}
+
+export default function MainTabs({ currentMenu, main }: MainTabs) {
   return (
-    <Wrap>
+    <Wrap main={main}>
       {menuList.map(({ title, value }) => {
         return (
           <Button key={title} $isActive={currentMenu === value}>
@@ -40,7 +45,7 @@ const Button = styled.li<{ $isActive: boolean }>`
     display: block;
   }
 `
-const Wrap = styled.ul`
+const Wrap = styled.ul<{ main?: boolean }>`
   position: sticky;
   top: 98px;
   z-index: ${theme.layout.zIndex3};
@@ -49,4 +54,6 @@ const Wrap = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  ${(props) =>
+    props.main && `border-bottom: 1px solid ${theme.colors.brightGray}`};
 `
