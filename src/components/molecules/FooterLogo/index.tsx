@@ -6,7 +6,7 @@ export default function FooterLogo() {
   return (
     <>
       {logoList.map(({ imgUrl, alt }) => {
-        return <LogoImage src={imgUrl} alt={alt} />
+        return <LogoImage key={imgUrl} src={imgUrl} alt={alt} />
       })}
     </>
   )
