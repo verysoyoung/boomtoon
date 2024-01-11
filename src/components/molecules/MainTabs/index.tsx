@@ -12,7 +12,7 @@ interface MainTabs {
 
 export default function MainTabs({ currentMenu, main }: MainTabs) {
   return (
-    <Wrap main={main}>
+    <Wrap $main={main}>
       {menuList.map(({ title, value }) => {
         return (
           <Button key={title} $isActive={currentMenu === value}>
@@ -45,7 +45,7 @@ const Button = styled.li<{ $isActive: boolean }>`
     display: block;
   }
 `
-const Wrap = styled.ul<{ main?: boolean }>`
+const Wrap = styled.ul<{ $main?: boolean }>`
   position: sticky;
   top: 98px;
   z-index: ${theme.layout.zIndex3};
@@ -55,5 +55,5 @@ const Wrap = styled.ul<{ main?: boolean }>`
   align-items: center;
   justify-content: space-around;
   ${(props) =>
-    props.main && `border-bottom: 1px solid ${theme.colors.brightGray}`};
+    props.$main && `border-bottom: 1px solid ${theme.colors.brightGray}`};
 `
